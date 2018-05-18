@@ -5,6 +5,7 @@
     <title>Vue Note</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Cookie" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="style.css">
@@ -15,8 +16,8 @@
     <div id="app">
       <div class="container">
         <div class="layout">
-          <div class="flex xs8 offset-xs2">
-            <v-card style="background-color:teal; margin:0 auto; padding:10px; font-family:  'Archivo Black', sans-serif;">
+          <div class="flex xs6 offset-xs3">
+            <v-card style="background-color:teal; margin:0 auto; padding:30px; font-family:  'Archivo Black', sans-serif; border-radius:10px">
               <v-form v-model="valid">
                 <v-text-field
                   v-model="note.title"
@@ -29,7 +30,7 @@
                   multi-line
                   required
                 ></v-text-field>
-                <v-btn @click="addNote" fab large color="teal">
+                <v-btn @click="addNote" fab large color="red">
                   <v-icon color="white">add</v-icon>
                 </v-btn>
               </v-form>
@@ -37,18 +38,24 @@
           </div>
         </div>
       </div>
+
+
       <v-divider></v-divider>
-      <div class="contaier">
-        <div class = "layout">
-          <div class = "flex xs4">
-            <div class="card note_card">
-              <span class="title"><h4>{{title}}</h4></span>
+
+
+      <div class="contaier fluid grid-list-sm">
+        <div class = "layout row wrap"  >
+          <div class = "flex xs4 " v-for = "note in notes" >
+            <div class="card note_card" style="margin:20px">
+              <span class="title">{{note.title}}</span>
               <v-divider></v-divider>
-              <span class="content"><p>{{content}}</p></span>
+              <span class="content"><p>{{note.content}}</p></span>
             </div>
           </div>
         </div>
       </div>
+
+
       <!-- <div class="add_note_div">
         <v-btn fab large color="teal">
           <v-icon color="white">add</v-icon>
@@ -63,16 +70,16 @@
       var app = new Vue({
         el:"#app",
         data:{
-          title: "Initial Note",
-          content: "This is the initial post",
+          title: "",
+          content: "",
           note:{
             title: '',
             content: ''
           },
           notes : [
             {
-              title: "fixed title",
-              content: "fixed content"
+              title: "Welcome note",
+              content: "Write your Note and click on add button :)"
             }
           ]
         },

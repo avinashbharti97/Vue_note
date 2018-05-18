@@ -1,11 +1,18 @@
 body{
-  background-color: #071013;
+  background-color: #262626;
   color:white;
 }
 .note_card{
-  background-color: #eb5160;
+  /* background-color: teal; */
+  background: linear-gradient(to right, #ff9966 , #ff5e62);
   padding: 20px;
   color:#dfe0e2;
+  border-radius: 10px;
+  border-style: solid;
+  border-right:none;
+  border-top:none;
+  border-bottom:none;
+  /* border-color:#262626 !important; */
 }
 .add_note_div{
   position: fixed;
@@ -18,13 +25,21 @@ body{
 }
 .title{
   font-family: 'Archivo Black', sans-serif;
-  color:#262626;
-  background-color:#dfe0e2;
+  color:white;
+  background-color:#262626;
   font-size:60px;
+  padding:2px;
+  font-weight:100;
 }
 .content{
-  font-family: 'Cookie', cursive;
-  font-size:40px;
+  font-family: 'Open Sans', sans-serif;
+  font-size:20px;
   padding-top:20px;
   padding-bottom:20px;
+  color:#262626;
+}
+h4{
+  background-color:#262626;
+  color:white;
+  font-weight:100;
 }
