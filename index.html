@@ -3,27 +3,36 @@
   <head>
     <meta charset="utf-8">
     <title>Vue Note</title>
-    <script src="https://unpkg.com/vue"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black|Cookie" rel="stylesheet">
+    <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
   </head>
   <body>
     <div id="app">
       <div class="container">
-        <div class = "row">
-          <div class = "col s4">
+        <div class = "layout">
+          <div class = "flex xs4">
             <div class="card note_card">
-              <h4>{{title}}</h4>
-              <p>{{content}}</p>
+              <span class="title"><h4>{{title}}</h4></span>
+              <v-divider></v-divider>
+              <span class="content"><p>{{content}}</p></span>
             </div>
           </div>
         </div>
       </div>
       <div class="add_note_div">
-        <a class="btn-floating btn-large waves-effect waves-light add_button"><i class="material-icons">add</i></a>
-      </div>
-    </div>
+        <v-btn fab large color="blue">
+          <v-icon color="black">edit</v-icon>
+        </v-btn>
+     </div>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+
+
 
     <script>
       var app = new Vue({
@@ -35,10 +44,19 @@
             title: '',
             content: ''
           }
+        },
+        methods:{
+          input_box: function (){
+            alert("hey");
+          }
         }
       })
+
+
+//javascripts
+
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
   </body>
 </html>

@@ -16,3 +16,15 @@ body{
   background-color: #4392f1;
 
 }
+.title{
+  font-family: 'Archivo Black', sans-serif;
+  color:#262626;
+  background-color:#dfe0e2;
+  font-size:60px;
+}
+.content{
+  font-family: 'Cookie', cursive;
+  font-size:40px;
+  padding-top:20px;
+  padding-bottom:20px;
+}
