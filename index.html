@@ -14,6 +14,31 @@
   <body>
     <div id="app">
       <div class="container">
+        <div class="layout">
+          <div class="flex xs8 offset-xs2">
+            <v-card style="background-color:teal; margin:0 auto; padding:10px; font-family:  'Archivo Black', sans-serif;">
+              <v-form v-model="valid">
+                <v-text-field
+                  v-model="note.title"
+                  label="Title"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="note.content"
+                  label="Content"
+                  multi-line
+                  required
+                ></v-text-field>
+                <v-btn @click="addNote" fab large color="teal">
+                  <v-icon color="white">add</v-icon>
+                </v-btn>
+              </v-form>
+            </v-card>
+          </div>
+        </div>
+      </div>
+      <v-divider></v-divider>
+      <div class="contaier">
         <div class = "layout">
           <div class = "flex xs4">
             <div class="card note_card">
@@ -24,39 +49,45 @@
           </div>
         </div>
       </div>
-      <div class="add_note_div">
-        <v-btn fab large color="blue">
-          <v-icon color="black">edit</v-icon>
+      <!-- <div class="add_note_div">
+        <v-btn fab large color="teal">
+          <v-icon color="white">add</v-icon>
         </v-btn>
-     </div>
-<script src="https://unpkg.com/vue"></script>
-<script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+     </div> -->
+   </div>
 
-
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
 
     <script>
       var app = new Vue({
         el:"#app",
-        data: {
+        data:{
           title: "Initial Note",
           content: "This is the initial post",
           note:{
             title: '',
             content: ''
-          }
+          },
+          notes : [
+            {
+              title: "fixed title",
+              content: "fixed content"
+            }
+          ]
         },
         methods:{
-          input_box: function (){
-            alert("hey");
+          addNote(){
+            let {content, title} = this.note
+            this.notes.push(
+              {
+                content, title
+              }
+            )
           }
         }
       })
-
-
-//javascripts
-
     </script>
-
 
   </body>
 </html>
