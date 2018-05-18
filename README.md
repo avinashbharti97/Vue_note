@@ -12,3 +12,4 @@
 * html
 * css
 * Vue-js
+* vuetify-js
