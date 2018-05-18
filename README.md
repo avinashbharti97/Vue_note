@@ -2,7 +2,7 @@
 
 ## [Have a taste here](https://avinashbharti97.github.io/Vue_note/)  :shaved_ice:
 
-##How to run this project:
+## How to run this project:
 * clone the repo in your local computer
 * open the project containing folder
 * open index.html file using any modern browser
