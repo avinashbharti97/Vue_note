@@ -45,9 +45,11 @@
 
       <div class="contaier fluid grid-list-sm">
         <div class = "layout row wrap"  >
-          <div class = "flex xs4 " v-for = "note in notes" >
+          <div class = "flex xs4 " v-for = "(note, index) in notes" >
             <div class="card note_card" style="margin:20px">
+
               <span class="title">{{note.title}}</span>
+              <v-btn fab dark small color="primary" @click="removeNote" style="position:absolute; right:0; top:0"><v-icon dark>remove</v-icon></v-btn>
               <v-divider></v-divider>
               <span class="content"><p>{{note.content}}</p></span>
             </div>
@@ -91,6 +93,9 @@
                 content, title
               }
             )
+          },
+          removeNote(index){
+            this.notes.splice(index, 1)
           }
         }
       })
